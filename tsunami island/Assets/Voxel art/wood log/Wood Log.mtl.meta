@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 7a843074a52a9ee419151d8b28f8251e
 timeCreated: 1484969952
+=======
+guid: 3fd8825756ff4f244963502c1125fad5
+timeCreated: 1484970344
+>>>>>>> Mahdi_Branch
 licenseType: Free
 DefaultImporter:
   userData: 
