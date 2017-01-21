@@ -30,9 +30,6 @@ public class BuyScript : MonoBehaviour {
         rockMultiplier = 0;
     }
 
-//Update is being used to check to see if the player is pressing B at any point in time. If the player is pressing B and the ammount of wood
-// they have is greater than 5, then the player can buy the spot and the houses cost is incremented by a multiple of its cost. New houses
-// are then bought for a higher ammount and spawned ontop of the first house.
     void Update()
     {
         Debug.Log(Int32.Parse(Wood.text));
@@ -45,7 +42,8 @@ public class BuyScript : MonoBehaviour {
                 {
                     Debug.Log(Int32.Parse(Wood.text));
                     Instantiate(house1, new Vector3(-2.0f, 3.0f+ (.8f*woodMultiplier), -2.0f), Quaternion.identity);
-                    Wood.text = "" + (Int32.Parse(Wood.text) - woodCost);
+                    PlayerController.Wscore = (PlayerController.Wscore - woodCost);
+                    Wood.text = "" + PlayerController.Wscore;
                     woodMultiplier++;
                     woodCost *= 1 + woodMultiplier;
                 }
@@ -53,7 +51,8 @@ public class BuyScript : MonoBehaviour {
                 {
                     Debug.Log(Int32.Parse(Wood.text));
                     Instantiate(house1, new Vector3(-2.0f, 3.0f, -2.0f), Quaternion.identity);
-                    Wood.text = "" + (Int32.Parse(Wood.text) - woodCost);
+                    PlayerController.Wscore = (PlayerController.Wscore - woodCost);
+                    Wood.text = "" + PlayerController.Wscore;
                     woodMultiplier++;
                     woodCost *= 1 + woodMultiplier;
                 }
