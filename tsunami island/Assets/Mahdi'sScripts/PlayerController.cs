@@ -8,8 +8,8 @@ using System.Linq;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody rb;
-    private int Rscore;
-    private int Wscore;
+    public static int Rscore;
+    public static int Wscore;
     public float speed;
     public Text wood;
     public Text rock;
