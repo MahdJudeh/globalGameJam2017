@@ -23,6 +23,17 @@ public class PlayerController : MonoBehaviour
         wood.text = "" + Wscore;
         rock.text = "" + Rscore;
     }
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetButtonDown("Jump") && grounded == true)
+        {
+
+            {
+                rb.AddForce(0f, jump, 0f);
+            }
+        }
+    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -53,6 +64,24 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject);
             Rscore += 1;
             rock.text = "" + Rscore;
+        }
+        if (other.tag == "Floor")
+        {
+            grounded = true;
+        }
+    }
+    void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Floor")
+        {
+            grounded = true;
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Floor")
+        {
+            grounded = false;
         }
     }
 }
