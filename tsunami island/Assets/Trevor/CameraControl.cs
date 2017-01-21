@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour {
 
-    private Transform ptrans;
+    private Transform ptrans;  //player
 
 	// Use this for initialization
 	void Start () {
+
+        //finds player
 		ptrans = GameObject.FindWithTag("Player").transform;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position = new Vector3(ptrans.position.x, ptrans.position.y + 10, ptrans.position.z - 10);
+
+        //attaches camera
+        transform.position = new Vector3(ptrans.position.x, ptrans.position.y + 5, ptrans.position.z - 5);
 
     }
 }

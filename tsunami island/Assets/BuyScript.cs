@@ -7,15 +7,24 @@ public class BuyScript : MonoBehaviour {
 
     public Text text;
 	
-	void OnTriggerStay()
+	void OnTriggerEnter(Collider other)
     {
-        
-        text.enabled=true;
+        Debug.Log("entered");
+        if (other.tag == "Player")
+        {
+            Debug.Log("entered");
+            text.enabled = true;
+            Debug.Log("Should Have printed");
+        }
          
 	}
 
-    void OnTriggerExit()
+    void OnTriggerExit(Collider other)
     {
-        //text.enabled = false;
+        Debug.Log("exited");
+        if (other.tag == "Player")
+        {
+            text.enabled = false;
+        }
     }
 }
