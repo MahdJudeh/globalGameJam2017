@@ -70,25 +70,26 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-    void OnCollisionEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
-        if (other.tag == "Floor")
+        Vector3 normal = new Vector3(0, 1, 0);
+        if (other.contacts[0].normal == normal)
         {
             grounded = true;
         }
     }
-    void OnCollisionExit(Collider other)
+    void OnCollisionExit(Collision other)
     {
-        if (other.tag == "Floor")
-        {
+        
             grounded = false;
-        }
+       
     }
-    void OnCollisionStay(Collider other)
+    void OnCollisionStay(Collision other)
     {
-        if (other.tag == "Floor")
+        Vector3 normal = new Vector3(0, 1, 0);
+        if (other.contacts[0].normal == normal)
         {
-            grounded = false;
+            grounded = true;
         }
     }
 }
