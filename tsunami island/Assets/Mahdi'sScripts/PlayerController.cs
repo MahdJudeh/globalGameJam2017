@@ -68,19 +68,23 @@ public class PlayerController : MonoBehaviour
             Rscore += 1;
             rock.text = "" + Rscore;
         }
-        if (other.tag == "Floor")
-        {
-            grounded = true;
-        }
+
     }
-    void OnTriggerStay(Collider other)
+    void OnCollisionEnter(Collider other)
     {
         if (other.tag == "Floor")
         {
             grounded = true;
         }
     }
-    void OnTriggerExit(Collider other)
+    void OnCollisionExit(Collider other)
+    {
+        if (other.tag == "Floor")
+        {
+            grounded = false;
+        }
+    }
+    void OnCollisionStay(Collider other)
     {
         if (other.tag == "Floor")
         {

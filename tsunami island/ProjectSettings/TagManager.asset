@@ -7,6 +7,8 @@ TagManager:
   - Wood
   - Stone
   - Water
+  - Safe
+  - Floor
   layers:
   - Default
   - TransparentFX
