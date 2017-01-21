@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 3ff161051fb24e448895b1b6a3454ce9
 timeCreated: 1484969954
+=======
+guid: c3e06c0e8df924d46be5e38e8eb469ea
+timeCreated: 1484970348
+>>>>>>> Mahdi_Branch
 licenseType: Free
 ModelImporter:
   serializedVersion: 19

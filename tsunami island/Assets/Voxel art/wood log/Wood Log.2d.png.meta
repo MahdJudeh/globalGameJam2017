@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 9bd6309945bab9946b4ae4c66a17d1d8
 timeCreated: 1484969953
+=======
+guid: 0c1f555d1f7b249448ad185d9a7e9fde
+timeCreated: 1484970348
+>>>>>>> Mahdi_Branch
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}

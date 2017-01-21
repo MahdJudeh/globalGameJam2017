@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 847cad43faf56c946aefb61aa624c3b6
 folderAsset: yes
 timeCreated: 1484969952
+=======
+guid: b38db26a36454f94b86ae23f93e31b8d
+folderAsset: yes
+timeCreated: 1484970344
+>>>>>>> Mahdi_Branch
 licenseType: Free
 DefaultImporter:
   userData: 
