@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public Text wood;
     public Text rock;
+    private bool grounded;
+    public float jump;
     // Use this for initialization
     void Start()
     {
@@ -22,6 +24,7 @@ public class PlayerController : MonoBehaviour
         Wscore = 0;
         wood.text = "" + Wscore;
         rock.text = "" + Rscore;
+        grounded = true;
     }
     // Update is called once per frame
     void Update()
