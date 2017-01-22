@@ -7,6 +7,7 @@ public class RetryScript : MonoBehaviour {
 
 	void OnMouseDown()
     {
+        Debug.Log("fuck");
         SceneManager.LoadScene("MainSceneBetter", LoadSceneMode.Additive);
     }
 }
