@@ -9,7 +9,6 @@ public class GameController : MonoBehaviour
     public GameObject Moon;
     public GameObject Sun;
     public GameObject Ocean;
-    public GameObject Wave;
     public Text dayText;
     private int day;
     private int time;
@@ -39,19 +38,15 @@ public class GameController : MonoBehaviour
             Ocean.transform.localScale += new Vector3(0f, 0.001f, 0f);
             Sun.transform.Rotate(rotation, 0f, 0f);
             time += 2;
-            if (time == 11400)
+            if (time == 7200)
             {
                 Sun.GetComponent<Light>().enabled = false;
                 Moon.GetComponent<Light>().enabled = true;
                 Sun.transform.position = new Vector3(50f, 0f, 0f);
                 Sun.transform.rotation = new Quaternion(0f, -90f, 0f, 0f);
             }
-            if (time % 1000 == 0 && rand == 1)
-            {
-                Instantiate(Wave, new Vector3(Random.Range(250.0f, 500.0f), 0, Random.Range(250.0f, 500.0f)), Quaternion.identity);
-            }
         }
-        else if (time < 22800)
+        else if (time < 10800)
         {
             Ocean.transform.localScale -= new Vector3(0f, 0.001f, 0f);
             Moon.transform.Rotate(rotation, 0f, 0f);
@@ -60,6 +55,7 @@ public class GameController : MonoBehaviour
             {
                 Moon.GetComponent<Light>().enabled = false;
                 time = 0;
+                day++;
             }
         }
     }
