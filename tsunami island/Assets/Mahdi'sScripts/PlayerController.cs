@@ -65,10 +65,12 @@ public class PlayerController : MonoBehaviour
         //if (newz < -1) newz = -1;
         //else if (newz > 1) newz = 1;
 
-        mov = new Vector3(x, 0f, z);
+        if (x != 0 || z != 0)
+        {
+            mov = new Vector3(x, 0f, z);
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(mov), speed * Time.deltaTime);
-
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(mov), speed * Time.deltaTime);
+        }
 
     }
 
