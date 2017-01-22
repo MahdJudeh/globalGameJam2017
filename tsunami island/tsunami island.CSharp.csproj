@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\BuyScript.cs" />
+    <Compile Include="Assets\Death.cs" />
     <Compile Include="Assets\Mahdi&apos;sScripts\GameController.cs" />
     <Compile Include="Assets\Mahdi&apos;sScripts\PlayerController.cs" />
     <Compile Include="Assets\Trevor\CameraControl.cs" />
