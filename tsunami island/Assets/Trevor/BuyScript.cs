@@ -32,7 +32,7 @@ public class BuyScript : MonoBehaviour {
 
     void Update()
     {
-        Debug.Log(Int32.Parse(Wood.text));
+        
         if (Int32.Parse(Wood.text) >= woodCost)
         {
             Debug.Log(Int32.Parse(Wood.text));

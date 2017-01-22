@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class RetryScript : MonoBehaviour {
 
-	void OnMouseDown()
+	void OnClick()
     {
         Debug.Log("fuck");
         SceneManager.LoadScene("MainSceneBetter", LoadSceneMode.Additive);

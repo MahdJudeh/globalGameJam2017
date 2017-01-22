@@ -1486,6 +1486,16 @@ Prefab:
       propertyPath: rock
       value: 
       objectReference: {fileID: 1983953583}
+    - target: {fileID: 95631024186013106, guid: a4af9973ad8b14e448f369b859909d33,
+        type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114199564764632066, guid: a4af9973ad8b14e448f369b859909d33,
+        type: 2}
+      propertyPath: maxSpeed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a4af9973ad8b14e448f369b859909d33, type: 2}
   m_IsPrefabParent: 0
@@ -1561,6 +1571,7 @@ MonoBehaviour:
   Moon: {fileID: 1109461934}
   Sun: {fileID: 677658644}
   Ocean: {fileID: 726377349}
+  Wave: {fileID: 0}
   dayText: {fileID: 581398}
 --- !u!4 &1662372564
 Transform:
