@@ -10,11 +10,15 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     public static int Rscore;
     public static int Wscore;
+    public static float maxSpeed = 5f;
+    public float angle = 0f;
     public float speed;
     public Text wood;
     public Text rock;
     private bool grounded;
     public float jump;
+
+    public float newx, newz;
     // Use this for initialization
     void Start()
     {
@@ -23,7 +27,7 @@ public class PlayerController : MonoBehaviour
         Rscore = 0;
         Wscore = 0;
         wood.text = "" + Wscore;
-        rock.text = "" + Rscore;
+        //rock.text = "" + Rscore;
         grounded = true;
     }
     // Update is called once per frame
@@ -46,13 +50,28 @@ public class PlayerController : MonoBehaviour
         float z = Input.GetAxis("Vertical");
 
         //Creates a new vector for movement
-        Vector3 movement = new Vector3(x, 0f, z);
+        Vector3 mov = new Vector3(x, 0f, z);
 
         //Adds a force to the game object to make it move
-        rb.AddForce(movement * speed);
-        rb.freezeRotation = true;
+        //        if (rb.velocity.magnitude < maxSpeed)
+        rb.AddForce(mov * speed);
+
+        //rb.freezeRotation = true;
+
+        //newx += x;
+        //if (newx < -1) newx = -1;
+        //else if (newx > 1) newx = 1;
+        //newz += z;
+        //if (newz < -1) newz = -1;
+        //else if (newz > 1) newz = 1;
+
+        mov = new Vector3(x, 0f, z);
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(mov), speed * Time.deltaTime);
+
 
     }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Wood")
@@ -80,9 +99,9 @@ public class PlayerController : MonoBehaviour
     }
     void OnCollisionExit(Collision other)
     {
-        
-            grounded = false;
-       
+
+        grounded = false;
+
     }
     void OnCollisionStay(Collision other)
     {
