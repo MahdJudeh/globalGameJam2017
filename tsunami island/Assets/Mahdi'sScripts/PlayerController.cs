@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     public static int Rscore;
     public static int Wscore;
-    public static float maxSpeed = 5f;
+    public float maxSpeed;
     public float angle = 0f;
     public float speed;
     public Text wood;
@@ -55,8 +55,8 @@ public class PlayerController : MonoBehaviour
         Vector3 mov = new Vector3(x, 0f, z);
 
         //Adds a force to the game object to make it move
-        //        if (rb.velocity.magnitude < maxSpeed)
-        rb.AddForce(mov * speed);
+        if (rb.velocity.magnitude < maxSpeed)
+            rb.AddForce(mov * speed);
 
         //rb.freezeRotation = true;
 
@@ -69,13 +69,12 @@ public class PlayerController : MonoBehaviour
 
         if (x != 0 || z != 0)
         {
-            mov = new Vector3(x, 0f, z);
-            anim.SetTrigger("running_inPlace");
+            anim.Play("running_inPlace");
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(mov), speed * Time.deltaTime);
         }
         else
         {
-            anim.SetTrigger("sad_idle");
+            anim.Play("sad_idle");
         }
     }
 
