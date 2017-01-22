@@ -35,12 +35,12 @@ public class BuyScript : MonoBehaviour {
         
         if (Int32.Parse(Wood.text) >= woodCost)
         {
-            Debug.Log(Int32.Parse(Wood.text));
+            //Debug.Log(Int32.Parse(Wood.text));
             if (Input.GetKeyDown("b"))
             {
                 if (woodCost > 5)
                 {
-                    Debug.Log(Int32.Parse(Wood.text));
+                    //Debug.Log(Int32.Parse(Wood.text));
                     Instantiate(house1, new Vector3(-2.0f, 3.0f+ (.8f*woodMultiplier), -2.0f), Quaternion.identity);
                     PlayerController.Wscore = (PlayerController.Wscore - woodCost);
                     Wood.text = "" + PlayerController.Wscore;
@@ -49,7 +49,7 @@ public class BuyScript : MonoBehaviour {
                 }
                 else
                 {
-                    Debug.Log(Int32.Parse(Wood.text));
+                    //Debug.Log(Int32.Parse(Wood.text));
                     Instantiate(house1, new Vector3(-2.0f, 3.0f, -2.0f), Quaternion.identity);
                     PlayerController.Wscore = (PlayerController.Wscore - woodCost);
                     Wood.text = "" + PlayerController.Wscore;

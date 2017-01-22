@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SafeDisable : MonoBehaviour {
+
+    public float waveSpeed;
     
     private int breaks = 0;
 
@@ -12,8 +14,8 @@ public class SafeDisable : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void FixedUpdate () {
+        transform.position+=transform.right*waveSpeed;
 	}
 
     void OnTriggerEnter(Collider other)
@@ -22,16 +24,19 @@ public class SafeDisable : MonoBehaviour {
         {
             if (breaks < 3)
             {
+                Debug.Log(breaks);
                 breaks++;
-                Disable(other);
+                StartCoroutine(Disable(other));
             }
         }
     }
 
-    IEnumerable Disable(Collider other)
+    IEnumerator Disable(Collider other)
     {
+        Debug.Log("Started Disable");
         other.enabled = false;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSecondsRealtime(2);
+        Debug.Log("Yeild works");
         other.enabled = true;
     }
 }

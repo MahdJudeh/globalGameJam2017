@@ -83,13 +83,13 @@
   <ItemGroup>
     <Compile Include="Assets\Mahdi&apos;sScripts\GameController.cs" />
     <Compile Include="Assets\Mahdi&apos;sScripts\PlayerController.cs" />
+    <Compile Include="Assets\OnceDisableScript.cs" />
     <Compile Include="Assets\Trevor\BuyScript.cs" />
     <Compile Include="Assets\Trevor\CameraControl.cs" />
     <Compile Include="Assets\Trevor\Death.cs" />
     <Compile Include="Assets\Trevor\RetryScript.cs" />
     <Compile Include="Assets\Trevor\SafeDisable.cs" />
     <Compile Include="Assets\WaveSpawner.cs" />
-    <Compile Include="Assets\movingControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />

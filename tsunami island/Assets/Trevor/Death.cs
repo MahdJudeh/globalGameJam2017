@@ -5,19 +5,19 @@ using UnityEngine;
 public class Death : MonoBehaviour {
 
     public GameObject screen;
-
-    private bool safe;
+    
+    public bool safe;
 
 	void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Safe")
-        {
-            safe = true;
-        }
-        else
-        {
-            safe = false;
-        }
+        //if (other.tag == "Safe")
+        //{
+        //    safe = true;
+        //}
+        //else
+        //{
+        //    safe = false;
+        //}
 
         if (other.tag=="Water")
         {
@@ -32,7 +32,14 @@ public class Death : MonoBehaviour {
                 screen.SetActive(true);
             }
         }
+        
     }
-
-
+    void OnTriggerStay(Collider other){
+        if (other.tag == "Safe")
+            safe = true;
+    }
+    void OnTriggerExit(Collider other)
+    {
+        safe = false;
+    }
 }

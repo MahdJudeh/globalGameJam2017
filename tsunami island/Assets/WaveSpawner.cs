@@ -6,16 +6,17 @@ public class WaveSpawner : MonoBehaviour {
     public GameObject Wave;
     private int time;
     private int divider;
+
 	// Use this for initialization
 	void Start () {
-        time = 1;
+        time = 2;
         divider = 1;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        int rand = Random.Range(1, 4);
-        if ((time) % ((Mathf.Floor(5000 / divider))) == 0)
+        int rand = Random.Range(1, 5);
+        if ((time) % ((Mathf.Floor(500 / divider))) == 0)
         {
             if (rand == 1)
             {
