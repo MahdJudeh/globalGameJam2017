@@ -17,7 +17,7 @@ public class CameraControl : MonoBehaviour {
 	void Update () {
 
         //attaches camera
-        transform.position = new Vector3(ptrans.position.x, ptrans.position.y + 1, ptrans.position.z - 1);
+        transform.position = new Vector3(ptrans.position.x, ptrans.position.y + 2, ptrans.position.z - 2);
 
     }
 }
