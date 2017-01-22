@@ -10,6 +10,8 @@ TagManager:
   - Safe
   - Floor
   - Tsunami
+  - beach1
+  - beach2
   layers:
   - Default
   - TransparentFX
