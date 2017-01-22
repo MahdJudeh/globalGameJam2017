@@ -81,6 +81,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\LoadScene.cs" />
     <Compile Include="Assets\Mahdi&apos;sScripts\GameController.cs" />
     <Compile Include="Assets\Mahdi&apos;sScripts\PlayerController.cs" />
     <Compile Include="Assets\OnceDisableScript.cs" />
