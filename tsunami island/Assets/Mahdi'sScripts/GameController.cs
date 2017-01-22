@@ -60,7 +60,7 @@ public class GameController : MonoBehaviour
         {
             Moon.SetActive(true);
             Sun.SetActive(false);
-            Ocean.transform.localScale += new Vector3(0f, 0.0004f*timeSpeed, 0f);
+            Ocean.transform.localScale += new Vector3(0f, 0.0006f*timeSpeed, 0f);
         }
         else
         {
