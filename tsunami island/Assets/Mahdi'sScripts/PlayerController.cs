@@ -53,11 +53,22 @@ public class PlayerController : MonoBehaviour
 
         //Creates a new vector for movement
         Vector3 mov = new Vector3(x, 0f, z);
+        
+        // character and camera Transform variables may or may not be necessary
+        Transform player;
+        Transform cam;
+        cam = Camera.main.transform;
+        // This establishes basic controls relative to the camera
+        Vector3 controlRight = Vector3.Cross(cam.up, cam.forward);
+        Vector3 controlForward = Vector3.Cross(cam.right, Vector3.up);
 
+        // Apply movement to control input
+        Vector3 controlInput = (controlRight * Input.GetAxis("Horizontal")) + (controlForward * Input.GetAxis("Vertical"));
         //Adds a force to the game object to make it move
         if (rb.velocity.magnitude < maxSpeed)
-            rb.AddForce(mov * speed);
+            rb.AddForce(controlInput * speed);
 
+        
         //rb.freezeRotation = true;
 
         //newx += x;
@@ -70,12 +81,19 @@ public class PlayerController : MonoBehaviour
         if (x != 0 || z != 0)
         {
             anim.Play("running_inPlace");
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(mov), speed * Time.deltaTime);
+            //transform.rotation = /*Quaternion.Euler(Camera.main.transform.rotation.x, 0, Camera.main.transform.rotation.y);*/Quaternion.LookRotation(controlInput);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(controlInput), speed * Time.deltaTime);
         }
         else
         {
             anim.Play("sad_idle");
         }
+      //  Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.z, 10);
+      //  Vector3 lookPos = Camera.main.ScreenToWorldPoint(mousePos);
+      //  lookPos = lookPos - transform.position;
+      //  float angle = Mathf.Atan2(lookPos.z, lookPos.x) * Mathf.Rad2Deg;
+      //  transform.rotation = Quaternion.AngleAxis(angle, Vector3.down); // Turns Right
+      ////  transform.rotation = Quaternion.AngleAxis(angle, Vector3.up); //Turns Left
     }
 
     void OnTriggerEnter(Collider other)
