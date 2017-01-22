@@ -6,10 +6,10 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: palette
+  m_Name: Wood Log 4
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
+  m_ShaderKeywords: _EMISSION
+  m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
   m_SavedProperties:
@@ -48,15 +48,7 @@ Material:
     - first:
         name: _MainTex
       second:
-<<<<<<< HEAD
-        m_Texture: {fileID: 2800000, guid: 1c9365db1f03fae47a38bf97e3e5d385, type: 3}
-=======
-<<<<<<< HEAD
-        m_Texture: {fileID: 2800000, guid: 511966b5c743c9248b89642f17023ef5, type: 3}
-=======
-        m_Texture: {fileID: 2800000, guid: 3329781466ac27e449f8b0e0cc71b9c8, type: 3}
->>>>>>> 86aeb71e0beaf3e4704d6ec0ff6b9fe43d2803df
->>>>>>> 3406bccd65c498e8e92b488b962aae025922ffea
+        m_Texture: {fileID: 2800000, guid: ab352f1cbfe95ac45bd8dd48e4bd275b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -95,13 +87,13 @@ Material:
       second: 1
     - first:
         name: _Glossiness
-      second: 0.5
+      second: 0.724
     - first:
         name: _GlossyReflections
       second: 1
     - first:
         name: _Metallic
-      second: 0
+      second: 1
     - first:
         name: _Mode
       second: 0

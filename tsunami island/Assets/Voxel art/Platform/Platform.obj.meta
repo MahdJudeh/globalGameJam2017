@@ -1,7 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: d7637c3b793549b4c8c3e1c01e704816
 timeCreated: 1485111716
 licenseType: Free
+=======
+guid: 1012b76ff1ff81a4daf6ecb3f1a5c6a2
+>>>>>>> 3406bccd65c498e8e92b488b962aae025922ffea
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -12,6 +16,10 @@ ModelImporter:
     2300000: default
     3300000: default
     4300000: default
+<<<<<<< HEAD
+=======
+    9500000: //RootNode
+>>>>>>> 3406bccd65c498e8e92b488b962aae025922ffea
   materials:
     importMaterials: 1
     materialName: 0
@@ -36,7 +44,11 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
+<<<<<<< HEAD
     globalScale: 1
+=======
+    globalScale: 0
+>>>>>>> 3406bccd65c498e8e92b488b962aae025922ffea
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -74,7 +86,11 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+<<<<<<< HEAD
   animationType: 0
+=======
+  animationType: 2
+>>>>>>> 3406bccd65c498e8e92b488b962aae025922ffea
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
