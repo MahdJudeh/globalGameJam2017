@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public Text wood;
     public Text rock;
     private bool grounded;
+    private Animator anim;
     public float jump;
 
     public float newx, newz;
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
         wood.text = "" + Wscore;
         //rock.text = "" + Rscore;
         grounded = true;
+        anim = GetComponent<Animator>();
     }
     // Update is called once per frame
     void Update()
@@ -68,10 +70,13 @@ public class PlayerController : MonoBehaviour
         if (x != 0 || z != 0)
         {
             mov = new Vector3(x, 0f, z);
-
+            anim.SetTrigger("running_inPlace");
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(mov), speed * Time.deltaTime);
         }
-
+        else
+        {
+            anim.SetTrigger("sad_idle");
+        }
     }
 
     void OnTriggerEnter(Collider other)
