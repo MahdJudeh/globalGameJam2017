@@ -10,53 +10,56 @@ public class GameController : MonoBehaviour
     public GameObject Sun;
     public GameObject Ocean;
     public Text dayText;
-    private int day;
-    private int time;
+    public float timeSpeed;
     private float rotation = .003f;
-    private int max;
 
-    // Use this for initialization
-    void Start()
-    {
-        time = 0;
-        day = 0;
-        Moon.GetComponent<Light>().enabled = false;
-        Sun.transform.position = new Vector3(50f, 0f, 0f);
-        Sun.transform.rotation = new Quaternion(0f, -90f, 0f, 0f);
-        dayText.text = dayText.text + " " + day;
-        max = 1;
-
-
-    }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        int rand = Random.Range(0, max);
-        if (time < 11400)
+        //int rand = Random.Range(0, max);
+        //if (Time.time-Time.timeSinceLevelLoad>)
+        //{
+        //    Ocean.transform.localScale += new Vector3(0f, 0.001f, 0f);
+        //    Sun.transform.Rotate(rotation, 0f, 0f);
+        //    time += 2;
+        //    if (time == 7200)
+        //    {
+        //        time
+        //        Sun.GetComponent<Light>().enabled = false;
+        //        Moon.GetComponent<Light>().enabled = true;
+        //        Sun.transform.position = new Vector3(50f, 0f, 0f);
+        //        Sun.transform.rotation = new Quaternion(0f, -90f, 0f, 0f);
+        //    }
+        //}
+        //else if (time < 10800)
+        //{
+        //    Ocean.transform.localScale -= new Vector3(0f, 0.0006f, 0f);
+        //    Moon.transform.Rotate(rotation, 0f, 0f);
+        //    time += 2;
+        //    if (time == 10800)
+        //    {
+        //        Moon.GetComponent<Light>().enabled = false;
+        //        time = 0;
+        //        day++;
+        //    }
+        //}
+        if ((Time.time * timeSpeed) % 360 > 180)
         {
-            Ocean.transform.localScale += new Vector3(0f, 0.001f, 0f);
-            Sun.transform.Rotate(rotation, 0f, 0f);
-            time += 2;
-            if (time == 7200)
-            {
-                Sun.GetComponent<Light>().enabled = false;
-                Moon.GetComponent<Light>().enabled = true;
-                Sun.transform.position = new Vector3(50f, 0f, 0f);
-                Sun.transform.rotation = new Quaternion(0f, -90f, 0f, 0f);
-            }
+            Moon.SetActive(true);
+            Sun.SetActive(false);
+            Ocean.transform.localScale += new Vector3(0f, 0.0008f*timeSpeed, 0f);
+
         }
-        else if (time < 10800)
+        else
         {
-            Ocean.transform.localScale -= new Vector3(0f, 0.001f, 0f);
-            Moon.transform.Rotate(rotation, 0f, 0f);
-            time += 2;
-            if (time == 22800)
-            {
-                Moon.GetComponent<Light>().enabled = false;
-                time = 0;
-                day++;
-            }
+            Moon.SetActive(false);
+            Sun.SetActive(true);
+            Ocean.transform.localScale -= new Vector3(0f, 0.0006f*timeSpeed, 0f);
         }
+
+        Sun.transform.rotation = Quaternion.Euler(Time.time*timeSpeed, -90, 0);
+        Moon.transform.rotation = Quaternion.Euler(Time.time*timeSpeed-180, -90, 0);
+        dayText.text = "Day: " + (int)(Time.time * timeSpeed / 360);
     }
 }
