@@ -5,6 +5,8 @@ using UnityEngine;
 public class CameraControl : MonoBehaviour {
 
     private Transform ptrans;  //player
+    private float mouseH;
+    private float x;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +20,8 @@ public class CameraControl : MonoBehaviour {
 
         //attaches camera
         transform.position = new Vector3(ptrans.position.x, ptrans.position.y + 2, ptrans.position.z - 2);
-
+        //mouseH = Input.GetAxis("Mouse X");
+        //x += mouseH;
+        //transform.rotation = Quaternion.Euler(0, x, 0); 
     }
 }
